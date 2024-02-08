@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root{
+    --orange: hsl(31, 77%, 52%);
+    --cyan: hsl(184, 100%, 22%);
+    --dark-cyan: hsl(179, 100%, 13%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: #f4f4f4;
+    width: 100%;
+    color:white
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    display: flex;
+}
+
+.card{
+    width: 300px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.card h1{
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.card p{
+    line-height: 1.5rem;
+    font-size: 15px;
+}
+
+.card.first{
+    Background-color: var(--orange);
+}
+
+.card.second{
+    Background-color: var(--cyan);
+}
+
+.card.third{
+    Background-color: var(--dark-cyan);
+}
+
+.card a{
+    display: block;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top:50px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.card.first a{
+    color: var(--orange);
+}
+
+.card.second a{
+    color: var(--cyan);
+}
+
+.card.third a{
+    color: var(--dark-cyan);
+}
+
+.card a:hover, .card a:active{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
