@@ -372,18 +372,13 @@ footer>div>div{
         font-size:3.5rem;
     }
 
-    main,.active{
+    main{
         height: 500px;
-    }
-
-    .active{
-        padding-bottom: 60px;
-        justify-content: flex-end;
     }
 
 
     .active>li>a{
-        font-size: 20px;
+        font-size: 30px;
     }
 
     header>h1{
