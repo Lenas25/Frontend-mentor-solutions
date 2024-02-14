@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap'); 
+/* Alata:400 */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/* Josefin 300 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-gray: hsl(0, 0%, 55%);
+    -very-dark-gray: hsl(0, 0%, 41%);
+}
+
+.padding-section{
+    padding:5rem 10rem;
+}
+
+body{
+    line-height: 1.6;
+    color: var(--dark-gray);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a, p{
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    font-size:15px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    padding-bottom:6px;
+    border-bottom: 2px solid white;
+}
+
+.social-icons >img:hover{
+    padding-bottom:6px;
+    border-bottom: 2px solid white;
+    
+}
+
+h1, h2,h3{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    color:black;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+.mobile{
+    display: none;
+}
+
+main{
+    background: url('../img/desktop/image-hero.jpg') no-repeat center center/cover;
+    height: 650px;
+    width: 100%;
+}
+
+.menu{
+    display: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap:30px;
+}
+
+h1{
+    width: 570px;
+    border:1px solid white;
+    padding:35px 30px 20px;
+    font-size: 4rem;
+    line-height: normal;
+    color:white;
+}
+
+
+.info{
+    position:relative;
+    display: flex;
+    padding-top:10rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.info>img{
+    object-fit: cover;
+    position: relative;
+    right: 10%;
+}
+
+.info-text{
+    position:absolute;
+    background-color: white;
+    width: 550px;
+    height: 300px;
+    padding: 80px;
+    top:50%;
+    left: 50%;
+}
+
+.info-text>h2{
+    line-height: normal;
+    margin-bottom:20px;
+}
+
+.creation-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:40px 0;
+}
+
+.creation-head>a{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:black;
+    letter-spacing: 2px;
+    border:1px solid black;
+    padding: 10px 30px 5px;
+    transition: all 0.3s ease;
+}
+
+.creation-head>a:hover{
+    background-color: black;
+    color:white;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.creation-img{
+    gap:20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card{
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.card:hover h3{
+    color:black;
+    cursor: pointer;
+}
+
+.card:hover .subtitle{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card >img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.card h3{
+    z-index: 1;
+    bottom: 0;
+    color:white;
+    position:absolute;
+    font-size: 2rem;
+    line-height: normal;
+    padding:50px 40px;
+}
+
+.subtitle{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    gap:20px;
+    padding: 3rem 10rem;
+    justify-content: space-between;
+}
+
+footer>div{
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-left{
+    align-items: flex-start;
+}
+
+.footer-right{
+    align-items: flex-end;
+}
+
+.footer-right>p{
+    text-align: end;
+}
+
+footer>div>div{
+    display: flex;
+    gap: 20px;
+}
+
+
+@media (max-width:1286px){
+    .subtitle h3{
+        font-size: 2.5vw;
+        padding:20px;
+    }
+}
+
+@media (max-width:1033px){
+    .info>img{
+        right: inherit;
+    }
+
+    .info-text{
+        top: 60%;
+        left:10%;
+        width: 700px;
+    }
+
+    .footer-body>p{
+        font-size: 12px;
+    }
+}
+
+@media (max-width:919px){
+
+    h1, h2,h3{
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    
+    h2{
+        font-size: 2rem;
+    }
+    
+    .padding-section{
+        padding:3rem 2rem;
+    }
+    .info{
+        flex-direction: column;
+        gap:50px;
+        padding-top:6rem;
+    }
+    .info>div{
+        position:static;
+        text-align: center;
+        width: 100%;
+        height: fit-content;
+        padding:0;
+    }
+
+    .info>img{
+        position:static;
+        width: 100%;
+    }
+
+    footer, .footer-left, .footer-right{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+@media (max-width:660px) {
+    
+    nav>ul{
+        display: none;
+    }
+
+    nav>img{
+        z-index: 1000;
+    }
+
+    .active{
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        z-index: 100;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 30px;
+    }
+
+    .active>li>a{
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+    
+    header>h1{
+        width: 100%;
+    }
+
+    .menu{
+        display: block;
+        font-size: 3em;
+        color:white;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .menu:hover{
+        border:none;
+        padding:0;
+    }
+
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+
+    .subtitle>h3{
+        font-size: 30px;
+        width: 200px;
+    }
+
+    .creation-img{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer, .footer-right>p{
+        text-align: center;
+    }
+
+    .footer-ul{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width:520px){
+    .info-text{
+        width: 100%;
+        padding: 40px;
+    }
+
+    header>h1{
+        font-size:3.5rem;
+    }
+
+    main,.active{
+        height: 500px;
+    }
+
+    header>h1{
+        font-size:40px;
+        padding:20px;
+    }
+
+    .subtitle h3{
+        font-size: 25px;
+        padding:10px;
+        width: 150px;
+    }
+
+    .creation-head{
+        justify-content: center;
+    }
+
+    .creation-head a{
+        position:absolute;
+        bottom: 60px;
+        left: 35%;
+    }
+
+    .creations{
+        position: relative;
+        padding-bottom:10rem;
+    }
+}
