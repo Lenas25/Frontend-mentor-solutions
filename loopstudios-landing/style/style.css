@@ -376,6 +376,16 @@ footer>div>div{
         height: 500px;
     }
 
+    .active{
+        padding-bottom: 60px;
+        justify-content: flex-end;
+    }
+
+
+    .active>li>a{
+        font-size: 20px;
+    }
+
     header>h1{
         font-size:40px;
         padding:20px;
