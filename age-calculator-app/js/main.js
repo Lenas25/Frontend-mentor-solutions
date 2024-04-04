@@ -1,35 +1,33 @@
-
-
-document.querySelector('#app').innerHTML = `
+document.querySelector("#app").innerHTML = `
 <main
-      class="w-[90%] bg-white py-10 px-5 md:py-20 md:px-10 rounded-2xl rounded-br-[100px] lg:w-[35%]">
-      <div class="flex items-center gap-3 md:gap-5 lg:w-[75%]">
-        <div class="container-input">
+      class="w-[90%] bg-white py-10 px-5 md:py-20 md:px-10 rounded-2xl rounded-br-[100px] lg:w-[45%]">
+      <div class="grid gap-3 grid-cols-3 md:gap-5 lg:w-[75%]">
+        <div class="container-input flex flex-col gap-1">
           <label for="day">DAY</label>
           <input
             id="day-input"
             type="text"
             placeholder="DD"
             data-length="2"
-            class="w-full border rounded-md p-2 text-[#141414] font-semibold placeholder:text-[#716F6F] outline-[#854DFF]" />
+            class="text-xl w-full border rounded-md p-2 text-[#141414] font-semibold placeholder:text-[#716F6F] outline-[#854DFF]" />
         </div>
-        <div class="container-input">
+        <div class="container-input flex flex-col gap-1">
           <label for="month">MONTH</label>
           <input
             id="month-input"
             type="text"
             data-length="2"
             placeholder="MM"
-            class="w-full border rounded-md p-2 text-[#141414] font-semibold placeholder:text-[#716F6F] outline-[#854DFF]" />
+            class="text-xl w-full border rounded-md p-2 text-[#141414] font-semibold placeholder:text-[#716F6F] outline-[#854DFF]" />
         </div>
-        <div class="container-input">
+        <div class="container-input flex flex-col gap-1">
           <label for="year">YEAR</label>
           <input
             id="year-input"
             type="text"
             placeholder="YYYY"
             data-length="4"
-            class="w-full border rounded-md p-2 text-[#141414] font-semibold placeholder:text-[#716F6F] outline-[#854DFF]" />
+            class="text-xl w-full border rounded-md p-2 text-[#141414] font-semibold placeholder:text-[#716F6F] outline-[#854DFF]" />
         </div>
       </div>
       <div class="relative py-16 md:py-12">
@@ -39,7 +37,7 @@ document.querySelector('#app').innerHTML = `
           <img src="./assets/icon-arrow.svg" alt="" />
         </button>
       </div>
-      <div class="flex flex-col gap-2">
+      <div id="age-container" class="flex flex-col gap-2">
         <div class="flex gap-3 items-center italic text-4xl md:text-6xl">
           <span id="years">--</span>
           <p>years</p>
@@ -56,17 +54,32 @@ document.querySelector('#app').innerHTML = `
     </main>
 `;
 
-const inputs=document.querySelectorAll("input");
+const inputs = document.querySelectorAll("input");
 
-inputs.forEach((input)=>{
-    input.onkeyup=(event)=>{
-      validateNumber(event);
-    }
+inputs.forEach((input) => {
+  input.onkeyup = (event) => {
+    validateNumber(event);
+  };
 });
 
-const button=document.querySelector("button");
-const containersInputs=document.querySelectorAll(".container-input");
+const button = document.querySelector("button");
+const containersInputs = [...document.querySelectorAll(".container-input")];
+button.onclick = () => {
+  //metorna un array
+  const results = containersInputs.map((container) => {
+    //metodo que busca un input dentro de un container
+    const input = container.querySelector("input");
+    //metodo que valida si el input esta vacio
+    const isValid = validateComplete(
+      container,
+      input,
+      container.querySelector("label")
+    );
+    //retorna un objeto con el valor del input y si es valido o no
+    return { isValid, value: input.value };
+  });
 
-button.onclick=()=>{containersInputs.forEach((container)=>{
-  validateComplete(container,container.querySelector("input"),container.querySelector("label"));
-})};
+  //recorre el array y si todos los valores son validos llama a la funcion calculateAge
+  const allInputsValid = results.every((result) => result.isValid === true);
+  if (allInputsValid) calculateAge(results);
+};
