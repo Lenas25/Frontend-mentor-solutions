@@ -87,3 +87,7 @@ function validateDays(element, container, title) {
     }
   }
 }
+
+function addErrorMessage(){
+  
+}
