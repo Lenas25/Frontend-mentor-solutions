@@ -1,0 +1,8 @@
+export {default as Home} from './Home.jsx'
+export {default as Definition} from './Definition.jsx'
+export {default as Skills} from './Skills.jsx'
+export {default as Sidebar} from './Sidebar.jsx'
+export {default as Motivaciones} from './Motivaciones.jsx'
+export {default as Mensaje} from './Mensaje.jsx'
+export {default as VidaAcademica} from './VidaAcademica.jsx'
+export {default as RecursosPersonales} from './RecursosPersonales.jsx'
