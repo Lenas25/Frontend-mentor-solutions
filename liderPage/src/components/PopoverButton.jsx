@@ -7,17 +7,17 @@ export function PopoverButton({info}) {
         aria-labelledby="default-popover" 
         content={
           <div className="w-64 text-sm text-gray-500 dark:text-gray-400">
-            <div className="border-b border-gray-200 bg-[#b0d2e8] px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
+            <div className="border-b border-gray-200 bg-[#81ABF5] px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
               <h3
                 id="default-popover"
                 className="font-semibold text-gray-900 dark:text-white">
-                Caracteristicas
+                Ejemplos
               </h3>
             </div>
             <div className="px-3 py-2">
               {
-                info.map((item) => {
-                  return <p className="mb-2">{item}</p>
+                info.map((item,index) => {
+                  return <p key={index} className="mb-2">{item}</p>
                 })
               }
             </div>
@@ -35,7 +35,7 @@ export function PopoverButton({info}) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-down">
+            className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-down">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M12 5l0 14" />
             <path d="M16 15l-4 4" />

@@ -9,7 +9,7 @@ export default function VidaAcademica() {
             Los habitos que tenemos en comun para poder adaptarnos a la
           </h4>
           <h3 className="font-custom text-5xl mt-5 mb-8 text-[#1D417E]">
-            "Vida Academica"
+            "Vida Académica"
           </h3>
           <div className="grid gap-y-5 grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-2 lg:gap-4 text-[#1D417E]">
             <div className="shadow-xl flex flex-col p-5 rounded-xl gap-2 hover:scale-110 transition duration-300 bg-white">

@@ -32,7 +32,7 @@ export default function Motivaciones() {
         <div className="my-12">
           <div className="text-center bg-gradient-to-b from-[#b7e1fc] to-[#81abf5] rounded-xl p-[1px] mb-5">
             <div className="bg-white m-1 rounded-xl p-5">
-              <h3 className="relative bottom-10 bg-white w-fit mx-auto px-5 text-2xl md:text-3xl font-semibold text-[#81abf5]">
+              <h3 className="relative bottom-10 bg-white w-fit mx-auto px-5 text-2xl md:text-3xl font-semibold text-[#81abf5] rounded-xl">
                 Motivaciones
               </h3>
               <p className="text-base md:text-lg font-medium  text-[#1D417E] -mt-5">
